@@ -24,6 +24,8 @@ BuildArch:      noarch
 
 BuildRequires:  python2-devel
 BuildRequires:  python3-devel
+BuildRequires:  python2-setuptools_scm
+BuildRequires:  python3-setuptools_scm
 
 %description
 %{desc}
