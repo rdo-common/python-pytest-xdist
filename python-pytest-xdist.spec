@@ -13,13 +13,13 @@
   different platforms and run tests in parallel on all of them.
 
 Name:           python-%{pypi_name}
-Version:        1.14
+Version:        1.15.0
 Release:        1%{?dist}
 Summary:        py.test plugin for distributed testing and loop-on-failing modes
 
 License:        MIT
 URL:            https://github.com/pytest-dev/pytest-xdist
-Source0:        https://files.pythonhosted.org/packages/source/p/%{pypi_name}/%{pypi_name}-%{version}.zip
+Source0:        https://files.pythonhosted.org/packages/source/p/%{pypi_name}/%{pypi_name}-%{version}.tar.gz
 BuildArch:      noarch
 
 BuildRequires:  python2-devel
@@ -75,5 +75,8 @@ Requires:       python3-py
 %{python3_sitelib}/xdist/
 
 %changelog
+* Mon Oct 03 2016 Scott Talbert <swt@techie.net> - 1.15.0-1
+- New upstream release 1.15.0
+
 * Thu Aug 11 2016 Scott Talbert <swt@techie.net> - 1.14-1
 - Initial package.
