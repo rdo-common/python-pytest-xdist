@@ -14,7 +14,7 @@
 
 Name:           python-%{pypi_name}
 Version:        1.15.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        py.test plugin for distributed testing and loop-on-failing modes
 
 License:        MIT
@@ -75,6 +75,9 @@ Requires:       python3-py
 %{python3_sitelib}/xdist/
 
 %changelog
+* Mon Dec 19 2016 Miro Hrončok <mhroncok@redhat.com> - 1.15.0-2
+- Rebuild for Python 3.6
+
 * Mon Oct 03 2016 Scott Talbert <swt@techie.net> - 1.15.0-1
 - New upstream release 1.15.0
 
