@@ -14,7 +14,7 @@
 
 Name:           python-%{pypi_name}
 Version:        1.15.0
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        py.test plugin for distributed testing and loop-on-failing modes
 
 License:        MIT
@@ -75,6 +75,9 @@ Requires:       python3-py
 %{python3_sitelib}/xdist/
 
 %changelog
+* Sat Feb 11 2017 Fedora Release Engineering <releng@fedoraproject.org> - 1.15.0-3
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_26_Mass_Rebuild
+
 * Mon Dec 19 2016 Miro Hrončok <mhroncok@redhat.com> - 1.15.0-2
 - Rebuild for Python 3.6
 
