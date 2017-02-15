@@ -14,7 +14,7 @@
 
 Name:           python-%{pypi_name}
 Version:        1.15.0
-Release:        3%{?dist}
+Release:        1.1%{?dist}
 Summary:        py.test plugin for distributed testing and loop-on-failing modes
 
 License:        MIT
@@ -23,9 +23,8 @@ Source0:        https://files.pythonhosted.org/packages/source/p/%{pypi_name}/%{
 BuildArch:      noarch
 
 BuildRequires:  python2-devel
-BuildRequires:  python3-devel
 BuildRequires:  python2-setuptools_scm
-BuildRequires:  python3-setuptools_scm
+BuildRequires:  python-setuptools
 
 %description
 %{desc}
@@ -34,20 +33,10 @@ BuildRequires:  python3-setuptools_scm
 Summary:        %{summary}
 %{?python_provide:%python_provide python2-%{pypi_name}}
 
-Requires:       python2-execnet
-Requires:       python2-pytest
-Requires:       python2-py
+Requires:       python-execnet
+Requires:       pytest
+Requires:       python-py
 %description -n python2-%{pypi_name}
-%{desc}
-
-%package -n     python3-%{pypi_name}
-Summary:        %{summary}
-%{?python_provide:%python_provide python3-%{pypi_name}}
-
-Requires:       python3-execnet
-Requires:       python3-pytest
-Requires:       python3-py
-%description -n python3-%{pypi_name}
 %{desc}
 
 %prep
@@ -55,11 +44,9 @@ Requires:       python3-py
 
 %build
 %py2_build
-%py3_build
 
 %install
 %py2_install
-%py3_install
 
 
 %files -n python2-%{pypi_name}
@@ -68,19 +55,7 @@ Requires:       python3-py
 %{python2_sitelib}/pytest_xdist*
 %{python2_sitelib}/xdist/
 
-%files -n python3-%{pypi_name}
-%doc OVERVIEW.md README.rst
-%license LICENSE
-%{python3_sitelib}/pytest_xdist*
-%{python3_sitelib}/xdist/
-
 %changelog
-* Sat Feb 11 2017 Fedora Release Engineering <releng@fedoraproject.org> - 1.15.0-3
-- Rebuilt for https://fedoraproject.org/wiki/Fedora_26_Mass_Rebuild
-
-* Mon Dec 19 2016 Miro Hrončok <mhroncok@redhat.com> - 1.15.0-2
-- Rebuild for Python 3.6
-
 * Mon Oct 03 2016 Scott Talbert <swt@techie.net> - 1.15.0-1
 - New upstream release 1.15.0
 
